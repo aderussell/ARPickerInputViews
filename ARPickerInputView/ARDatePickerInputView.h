@@ -25,9 +25,16 @@
 NS_ASSUME_NONNULL_BEGIN
 
 /**
- *  A date picker that can be attached to a text field to function as it's input view so that a date of birth can be entered.
+ *  A date picker that can be attached to a text field to function as it's input view so that a date can be entered.
  */
 @interface ARDatePickerInputView : UIDatePicker
+
+
+- (instancetype)init NS_UNAVAILABLE;
+
+- (instancetype)initWithFrame:(CGRect)frame NS_UNAVAILABLE;
+
+
 
 
 /**
@@ -47,14 +54,23 @@ NS_ASSUME_NONNULL_BEGIN
 
 /**
  *  The date formatter that is used to stringify the date so it can be set as the contents of the targetTextField.
+ *
+ *  By default the date formatter will format a date using the medium style for the date and not include the time.
  */
-@property (strong, nonatomic, readonly) NSDateFormatter *dateFormatter;
+@property (strong, nonatomic, null_resettable) NSDateFormatter *dateFormatter;
+
 
 /**
  *  Forces the contents of the targetTextField to be the selected date in the date picker.
  *  you must call this method if you change any properties of the dateFormatter so the changes are propagated to the targetTextfield.
  */
 - (void)updateDate;
+
+
+
+
+
+@property (nonatomic, copy, nullable) void (^valueChangedBlock)(NSDate *date);
 
 @end
 

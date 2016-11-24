@@ -14,9 +14,20 @@
 
 @implementation ViewController
 
-- (void)viewDidLoad {
+- (void)viewDidLoad
+{
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
+    
+    
+    // initialise the date picker input view
+    self.datePickerInputView = [[ARDatePickerInputView alloc] initAsInputForTextField:self.datePickerTextField];
+    
+    self.numberPickerInputView = [[ARNumberPickerInputView alloc] initAsInputForTextField:self.numberPickerTextField];
+    
+    self.numberPickerInputView.numberOfColumns = 4;
+    
+    self.listPickerInputView = [[ARListPickerInputView alloc] initAsInputForTextField:self.listPickerTextField];
 }
 
 

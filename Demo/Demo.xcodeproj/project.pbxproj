@@ -100,12 +100,12 @@
 			children = (
 				ABEE4E051DE6C0F400BD0CA6 /* ARDatePickerInputView.h */,
 				ABEE4E061DE6C0F400BD0CA6 /* ARDatePickerInputView.m */,
-				ABEE4E071DE6C0F400BD0CA6 /* ARDelegatedPickerInputView.h */,
-				ABEE4E081DE6C0F400BD0CA6 /* ARDelegatedPickerInputView.m */,
-				ABEE4E091DE6C0F400BD0CA6 /* ARListPickerInputView.h */,
-				ABEE4E0A1DE6C0F400BD0CA6 /* ARListPickerInputView.m */,
 				ABEE4E0B1DE6C0F400BD0CA6 /* ARNumberPickerInputView.h */,
 				ABEE4E0C1DE6C0F400BD0CA6 /* ARNumberPickerInputView.m */,
+				ABEE4E091DE6C0F400BD0CA6 /* ARListPickerInputView.h */,
+				ABEE4E0A1DE6C0F400BD0CA6 /* ARListPickerInputView.m */,
+				ABEE4E071DE6C0F400BD0CA6 /* ARDelegatedPickerInputView.h */,
+				ABEE4E081DE6C0F400BD0CA6 /* ARDelegatedPickerInputView.m */,
 				ABEE4E0D1DE6C0F400BD0CA6 /* ARObjectPickerInputView.h */,
 				ABEE4E0E1DE6C0F400BD0CA6 /* ARObjectPickerInputView.m */,
 			);
@@ -348,6 +348,7 @@
 				ABEE4E031DE6C0D200BD0CA6 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

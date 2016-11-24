@@ -20,7 +20,7 @@
 //     distribution.
 //
 
-#import "ARDateOfBirthInputPicker.h"
+#import "ARDatePickerInputView.h"
 
 @interface ARDatePickerInputView ()
 
@@ -31,15 +31,14 @@
 - (instancetype)initAsInputForTextField:(UITextField *)textField
 {
     if (self = [super init]) {
-        _targetTextField = textField;
         
-        _dateFormatter = [NSDateFormatter new];
-        self.dateFormatter.dateStyle = NSDateFormatterMediumStyle;
-        self.dateFormatter.timeStyle = NSDateFormatterNoStyle;
+        
+        _targetTextField = textField;
         
         
         self.datePickerMode = UIDatePickerModeDate;
-        self.maximumDate = [NSDate date];
+        
+        
         [self addTarget:self action:@selector(dateDidChange:) forControlEvents:UIControlEventValueChanged];
         
         UIToolbar *toolbar = [[UIToolbar alloc] init];
@@ -55,7 +54,7 @@
         textField.inputAccessoryView = toolbar;
         
         
-        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(didStartEditing:) name:@"UITextFieldTextDidBeginEditingNotification" object:textField];
+        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(didStartEditing:) name:UITextFieldTextDidBeginEditingNotification object:textField];
     }
     return self;
 }
@@ -65,8 +64,30 @@
     [[NSNotificationCenter defaultCenter] removeObserver:self];
 }
 
-- (void)dateDidChange:(UIDatePicker *)picker
+
+
+#pragma mark - Setters & Getters
+
+- (NSDateFormatter *)dateFormatter
 {
+    if (!_dateFormatter) {
+        _dateFormatter = [NSDateFormatter new];
+        _dateFormatter.dateStyle = NSDateFormatterMediumStyle;
+        _dateFormatter.timeStyle = NSDateFormatterNoStyle;
+    }
+    
+    return _dateFormatter;
+}
+
+
+
+
+#pragma mark - Setting the Date
+
+- (void)setDate:(NSDate *)date animated:(BOOL)animated
+{
+    [super setDate:date animated:animated];
+    
     [self updateDate];
 }
 
@@ -76,10 +97,31 @@
     [[NSNotificationCenter defaultCenter] postNotificationName:UITextFieldTextDidChangeNotification object:self.targetTextField];
 }
 
+
+
+#pragma mark - UIDatePicker Target methods
+
+- (void)dateDidChange:(UIDatePicker *)picker
+{
+    [self updateDate];
+    
+    if (self.valueChangedBlock) {
+        self.valueChangedBlock(picker.date);
+    }
+}
+
+
+
+#pragma mark - UIToolbar Target methods
+
 - (void)dismissDateOfBirthToolbar:(id)sender
 {
     [self.targetTextField resignFirstResponder];
 }
+
+
+
+#pragma mark - UITextField Notification methods
 
 - (void)didStartEditing:(NSNotification *)notification
 {

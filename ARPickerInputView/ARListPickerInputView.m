@@ -47,7 +47,7 @@
         textField.inputAccessoryView = toolbar;
         
         
-        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(didStartEditing:) name:@"UITextFieldTextDidBeginEditingNotification" object:textField];
+        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(didStartEditing:) name:UITextFieldTextDidBeginEditingNotification object:textField];
         
     }
     return self;

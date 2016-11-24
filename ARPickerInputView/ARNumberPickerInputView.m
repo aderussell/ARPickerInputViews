@@ -29,6 +29,9 @@
     if (self = [super init]) {
         _targetTextField = textField;
         
+        // set the default number of columns
+        _numberOfColumns = 2;
+        
         self.dataSource = self;
         self.delegate = self;
         textField.delegate = self;
@@ -46,7 +49,7 @@
         textField.inputAccessoryView = toolbar;
         
         
-        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(didStartEditing:) name:@"UITextFieldTextDidBeginEditingNotification" object:textField];
+        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(didStartEditing:) name:UITextFieldTextDidBeginEditingNotification object:textField];
         
     }
     return self;
@@ -69,7 +72,7 @@
 
 - (void)didStartEditing:(NSNotification *)notification
 {
-    //[self updateDate];
+    self.targetTextField.text = [NSString stringWithFormat:@"%ld", (long)self.selectedValue];
 }
 
 
@@ -114,7 +117,7 @@
 
 - (NSInteger)numberOfComponentsInPickerView:(UIPickerView *)pickerView
 {
-    return 2;
+    return self.numberOfColumns;
 }
 
 - (NSInteger)pickerView:(UIPickerView *)pickerView numberOfRowsInComponent:(NSInteger)component
@@ -123,17 +126,21 @@
 }
 
 
-#pragma mark - UITextFieldDelegate methods
 
-- (BOOL)textField:(UITextField *)textField shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString *)string
-{
-    return NO;
-}
+#pragma mark - UIPickerViewDelegate methods
 
 - (CGFloat)pickerView:(UIPickerView *)pickerView widthForComponent:(NSInteger)component
 {
     return 50.0;
 }
 
+
+
+#pragma mark - UITextFieldDelegate methods
+
+- (BOOL)textField:(UITextField *)textField shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString *)string
+{
+    return NO;
+}
 
 @end

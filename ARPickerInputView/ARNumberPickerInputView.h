@@ -26,6 +26,14 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface ARNumberPickerInputView : UIPickerView <UIPickerViewDataSource, UIPickerViewDelegate, UITextFieldDelegate>
 
+
+- (instancetype)init NS_UNAVAILABLE;
+
+- (instancetype)initWithFrame:(CGRect)frame NS_UNAVAILABLE;
+
+
+
+
 - (instancetype)initAsInputForTextField:(UITextField *)textField;
 
 
