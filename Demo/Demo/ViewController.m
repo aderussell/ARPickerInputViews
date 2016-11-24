@@ -26,6 +26,7 @@
     self.numberPickerInputView = [[ARNumberPickerInputView alloc] initAsInputForTextField:self.numberPickerTextField];
     
     self.numberPickerInputView.numberOfColumns = 4;
+    self.numberPickerInputView.selectedValue = 4390;
     
     self.listPickerInputView = [[ARListPickerInputView alloc] initAsInputForTextField:self.listPickerTextField];
 }

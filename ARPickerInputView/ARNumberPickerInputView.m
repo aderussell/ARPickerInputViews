@@ -78,7 +78,28 @@
 
 - (void)setSelectedValue:(NSUInteger)selectedValue
 {
-    
+    if (selectedValue != self.selectedValue) {
+        
+        // clamp the value in the acceptable range
+        NSUInteger clampedValue = MIN(selectedValue, (powl(10, self.numberOfColumns) - 1));
+        
+        // update the text field to show the new value
+        self.targetTextField.text = [NSString stringWithFormat:@"%ld", (long)clampedValue];
+        
+        // set the rows for the picker to show the clamped value
+        NSUInteger digits = self.numberOfColumns;
+        NSUInteger column = 0;
+        for (NSUInteger i = digits - 1; i > 0; i--) {
+            NSInteger divisor = pow((float)10, i);
+            NSInteger digit = clampedValue / divisor;
+            
+            [self selectRow:digit inComponent:column animated:YES];
+            
+            column++;
+            
+            clampedValue -= digit * divisor;
+        }
+    }
 }
 
 - (NSUInteger)selectedValue
