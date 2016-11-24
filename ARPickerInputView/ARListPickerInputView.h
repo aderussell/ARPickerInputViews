@@ -29,6 +29,13 @@ NS_ASSUME_NONNULL_BEGIN
 @interface ARListPickerInputView : UIPickerView <UIPickerViewDataSource, UIPickerViewDelegate, UITextFieldDelegate>
 
 
+- (instancetype)init NS_UNAVAILABLE;
+
+- (instancetype)initWithFrame:(CGRect)frame NS_UNAVAILABLE;
+
+
+
+
 - (instancetype)initAsInputForTextField:(UITextField *)textField;
 
 
@@ -37,14 +44,19 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, copy, nullable) void (^valueChangedBlock)(NSUInteger index);
 
 
-@property (strong, nonatomic, readwrite, null_resettable) NSArray *contents;
+@property (strong, nonatomic, readwrite, null_resettable) NSArray<NSString *> *contents;
+
+
+- (void)setContents:(NSArray *)contents selectingFirstObject:(BOOL)selectFirstObject;
+
+
 
 
 - (void)selectRow:(NSInteger)row animated:(BOOL)animated;
 
 
 
-- (void)setContents:(NSArray *)contents selectingFirstObject:(BOOL)selectFirstObject;
+
 
 @end
 

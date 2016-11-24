@@ -66,6 +66,28 @@
 
 
 
+#pragma mark - NSCoding
+
+- (instancetype)initWithCoder:(NSCoder *)aDecoder
+{
+    if ([super initWithCoder:aDecoder]) {
+        _dateFormatter   = [aDecoder decodeObjectForKey:@"dateFormatter"];
+        _targetTextField = [aDecoder decodeObjectForKey:@"targetTextField"];
+    }
+    return self;
+}
+
+- (void)encodeWithCoder:(NSCoder *)aCoder
+{
+    [super encodeWithCoder:aCoder];
+    
+    [aCoder encodeObject:_dateFormatter   forKey:@"dateFormatter"];
+    [aCoder encodeObject:_targetTextField forKey:@"targetTextField"];
+}
+
+
+
+
 #pragma mark - Setters & Getters
 
 - (NSDateFormatter *)dateFormatter

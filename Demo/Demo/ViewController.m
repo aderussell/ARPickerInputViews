@@ -29,12 +29,7 @@
     self.numberPickerInputView.selectedValue = 4390;
     
     self.listPickerInputView = [[ARListPickerInputView alloc] initAsInputForTextField:self.listPickerTextField];
-}
-
-
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+    self.listPickerInputView.contents = @[ @"Object A", @"Object B", @"Object C" ];
 }
 
 

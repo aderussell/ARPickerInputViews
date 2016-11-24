@@ -23,7 +23,9 @@
 #import "ARListPickerInputView.h"
 
 @implementation ARListPickerInputView
-
+{
+    NSArray<NSString *> *_contents;
+}
 
 - (instancetype)initAsInputForTextField:(UITextField *)textField
 {
@@ -61,7 +63,7 @@
 
 - (void)setContents:(NSArray *)contents
 {
-    [self setContents:contents selectingFirstObject:YES];
+    [self setContents:contents selectingFirstObject:NO];
 }
 
 
@@ -79,6 +81,15 @@
     }
 }
 
+- (NSArray *)contents
+{
+    if (!_contents) {
+        _contents = @[];
+    }
+    return _contents;
+}
+
+
 
 - (void)dismissDateOfBirthToolbar:(id)sender
 {
@@ -94,7 +105,8 @@
 
 - (void)didStartEditing:(NSNotification *)notification
 {
-    //[self updateDate];
+    NSUInteger row = [self selectedRowInComponent:0];
+    self.targetTextField.text = self.contents[row];
 }
 
 
@@ -106,8 +118,8 @@
 }
 
 
-#pragma mark - UIPickerView delegate methods
 
+#pragma mark - UIPickerViewDelegate methods
 
 - (void)pickerView:(UIPickerView *)pickerView didSelectRow:(NSInteger)row inComponent:(NSInteger)component
 {
@@ -119,7 +131,8 @@
 }
 
 
-#pragma mark - UIPickerView data source methods
+
+#pragma mark - UIPickerViewDataSource methods
 
 - (NSString *)pickerView:(UIPickerView *)pickerView titleForRow:(NSInteger)row forComponent:(NSInteger)component
 {
@@ -135,6 +148,7 @@
 {
     return self.contents.count;
 }
+
 
 
 #pragma mark - UITextFieldDelegate methods
