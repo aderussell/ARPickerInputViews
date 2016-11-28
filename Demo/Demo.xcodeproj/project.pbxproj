@@ -57,7 +57,7 @@
 		ABEE4DE11DE6C0D200BD0CA6 = {
 			isa = PBXGroup;
 			children = (
-				ABEE4E041DE6C0F400BD0CA6 /* ARPickerInputView */,
+				ABEE4E041DE6C0F400BD0CA6 /* ARPickerInputViews */,
 				ABEE4DEC1DE6C0D200BD0CA6 /* Demo */,
 				ABEE4DEB1DE6C0D200BD0CA6 /* Products */,
 			);
@@ -95,7 +95,7 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		ABEE4E041DE6C0F400BD0CA6 /* ARPickerInputView */ = {
+		ABEE4E041DE6C0F400BD0CA6 /* ARPickerInputViews */ = {
 			isa = PBXGroup;
 			children = (
 				ABEE4E051DE6C0F400BD0CA6 /* ARDatePickerInputView.h */,
@@ -109,8 +109,8 @@
 				ABEE4E0D1DE6C0F400BD0CA6 /* ARObjectPickerInputView.h */,
 				ABEE4E0E1DE6C0F400BD0CA6 /* ARObjectPickerInputView.m */,
 			);
-			name = ARPickerInputView;
-			path = ../ARPickerInputView;
+			name = ARPickerInputViews;
+			path = ../ARPickerInputViews;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
