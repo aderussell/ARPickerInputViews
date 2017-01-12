@@ -17,8 +17,9 @@ Pod::Spec.new do |s|
 
   s.name         = "ARPickerInputViews"
   s.version      = "1.0.0"
-  s.summary      = "A short description of ARPickerInputViews."
+  s.summary      = "A set of pickers that can easily be used as input views for a UITextField."
   s.description  = <<-DESC
+  					A set of pickers that can easily be used as input views for a UITextField.
                    DESC
 
   s.homepage         = "https://github.com/aderussell/ARPickerInputViews"
@@ -26,6 +27,8 @@ Pod::Spec.new do |s|
   s.license          = 'MIT'
   s.author           = { "aderussell" => "adrianrussell@me.com" }
   s.social_media_url = 'https://twitter.com/ade177'
+
+  s.source       = { :git => "https://github.com/aderussell/ARPickerInputViews.git", :tag => s.version.to_s }
 
   s.platform     = :ios, '7.0'
   s.requires_arc = true
