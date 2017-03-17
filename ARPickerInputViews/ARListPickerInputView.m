@@ -24,6 +24,7 @@
 
 @implementation ARListPickerInputView
 {
+    UIToolbar *_toolbar;
     NSArray<NSString *> *_contents;
 }
 
@@ -39,6 +40,7 @@
         UIToolbar *toolbar = [[UIToolbar alloc] init];
         toolbar.barStyle = UIBarStyleDefault;
         [toolbar sizeToFit];
+        _toolbar = toolbar;
         
         UIBarButtonItem *flex = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemFlexibleSpace target:self action:nil];
         UIBarButtonItem *rightButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemDone target:self action:@selector(dismissDateOfBirthToolbar:)];
@@ -58,6 +60,12 @@
 - (void)dealloc
 {
     [[NSNotificationCenter defaultCenter] removeObserver:self];
+}
+
+- (void)setTintColor:(UIColor *)tintColor
+{
+    [super setTintColor:tintColor];
+    _toolbar.tintColor = tintColor;
 }
 
 
