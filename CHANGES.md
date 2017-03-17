@@ -1,4 +1,4 @@
-1.0.1 (17/03/2007)
+1.0.1 (17/03/2017)
 ------------------
 * Setting the tint color now correctly tints the toolbar contents
 
