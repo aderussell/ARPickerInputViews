@@ -54,6 +54,11 @@ NS_ASSUME_NONNULL_BEGIN
  */
 @property (nonatomic) NSUInteger numberOfColumns;
 
+/**
+ *  Whether, or not, the receiver should show a clear button which will clear the target text field and dismiss the input view.
+ *  The default value is `NO`.
+ */
+@property (nonatomic, getter=showingClearButton) BOOL showClearButton;
 
 @end
 

@@ -14,10 +14,8 @@
 		ABEE4DFA1DE6C0D200BD0CA6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ABEE4DF91DE6C0D200BD0CA6 /* Assets.xcassets */; };
 		ABEE4DFD1DE6C0D200BD0CA6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ABEE4DFB1DE6C0D200BD0CA6 /* LaunchScreen.storyboard */; };
 		ABEE4E0F1DE6C0F400BD0CA6 /* ARDatePickerInputView.m in Sources */ = {isa = PBXBuildFile; fileRef = ABEE4E061DE6C0F400BD0CA6 /* ARDatePickerInputView.m */; };
-		ABEE4E101DE6C0F400BD0CA6 /* ARDelegatedPickerInputView.m in Sources */ = {isa = PBXBuildFile; fileRef = ABEE4E081DE6C0F400BD0CA6 /* ARDelegatedPickerInputView.m */; };
 		ABEE4E111DE6C0F400BD0CA6 /* ARListPickerInputView.m in Sources */ = {isa = PBXBuildFile; fileRef = ABEE4E0A1DE6C0F400BD0CA6 /* ARListPickerInputView.m */; };
 		ABEE4E121DE6C0F400BD0CA6 /* ARNumberPickerInputView.m in Sources */ = {isa = PBXBuildFile; fileRef = ABEE4E0C1DE6C0F400BD0CA6 /* ARNumberPickerInputView.m */; };
-		ABEE4E131DE6C0F400BD0CA6 /* ARObjectPickerInputView.m in Sources */ = {isa = PBXBuildFile; fileRef = ABEE4E0E1DE6C0F400BD0CA6 /* ARObjectPickerInputView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -33,14 +31,10 @@
 		ABEE4DFE1DE6C0D200BD0CA6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		ABEE4E051DE6C0F400BD0CA6 /* ARDatePickerInputView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ARDatePickerInputView.h; sourceTree = "<group>"; };
 		ABEE4E061DE6C0F400BD0CA6 /* ARDatePickerInputView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ARDatePickerInputView.m; sourceTree = "<group>"; };
-		ABEE4E071DE6C0F400BD0CA6 /* ARDelegatedPickerInputView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ARDelegatedPickerInputView.h; sourceTree = "<group>"; };
-		ABEE4E081DE6C0F400BD0CA6 /* ARDelegatedPickerInputView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ARDelegatedPickerInputView.m; sourceTree = "<group>"; };
 		ABEE4E091DE6C0F400BD0CA6 /* ARListPickerInputView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ARListPickerInputView.h; sourceTree = "<group>"; };
 		ABEE4E0A1DE6C0F400BD0CA6 /* ARListPickerInputView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ARListPickerInputView.m; sourceTree = "<group>"; };
 		ABEE4E0B1DE6C0F400BD0CA6 /* ARNumberPickerInputView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ARNumberPickerInputView.h; sourceTree = "<group>"; };
 		ABEE4E0C1DE6C0F400BD0CA6 /* ARNumberPickerInputView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ARNumberPickerInputView.m; sourceTree = "<group>"; };
-		ABEE4E0D1DE6C0F400BD0CA6 /* ARObjectPickerInputView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ARObjectPickerInputView.h; sourceTree = "<group>"; };
-		ABEE4E0E1DE6C0F400BD0CA6 /* ARObjectPickerInputView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ARObjectPickerInputView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -104,10 +98,6 @@
 				ABEE4E0C1DE6C0F400BD0CA6 /* ARNumberPickerInputView.m */,
 				ABEE4E091DE6C0F400BD0CA6 /* ARListPickerInputView.h */,
 				ABEE4E0A1DE6C0F400BD0CA6 /* ARListPickerInputView.m */,
-				ABEE4E071DE6C0F400BD0CA6 /* ARDelegatedPickerInputView.h */,
-				ABEE4E081DE6C0F400BD0CA6 /* ARDelegatedPickerInputView.m */,
-				ABEE4E0D1DE6C0F400BD0CA6 /* ARObjectPickerInputView.h */,
-				ABEE4E0E1DE6C0F400BD0CA6 /* ARObjectPickerInputView.m */,
 			);
 			name = ARPickerInputViews;
 			path = ../ARPickerInputViews;
@@ -139,7 +129,7 @@
 		ABEE4DE21DE6C0D200BD0CA6 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0810;
+				LastUpgradeCheck = 0940;
 				ORGANIZATIONNAME = "Adrian Russell";
 				TargetAttributes = {
 					ABEE4DE91DE6C0D200BD0CA6 = {
@@ -188,10 +178,8 @@
 				ABEE4DF51DE6C0D200BD0CA6 /* ViewController.m in Sources */,
 				ABEE4E121DE6C0F400BD0CA6 /* ARNumberPickerInputView.m in Sources */,
 				ABEE4DF21DE6C0D200BD0CA6 /* AppDelegate.m in Sources */,
-				ABEE4E101DE6C0F400BD0CA6 /* ARDelegatedPickerInputView.m in Sources */,
 				ABEE4E111DE6C0F400BD0CA6 /* ARListPickerInputView.m in Sources */,
 				ABEE4DEF1DE6C0D200BD0CA6 /* main.m in Sources */,
-				ABEE4E131DE6C0F400BD0CA6 /* ARObjectPickerInputView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -226,15 +214,24 @@
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_SUSPICIOUS_MOVES = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
@@ -257,7 +254,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -274,15 +271,24 @@
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_SUSPICIOUS_MOVES = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
@@ -299,7 +305,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";

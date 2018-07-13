@@ -25,6 +25,9 @@
 @implementation ARListPickerInputView
 {
     UIToolbar *_toolbar;
+    UIBarButtonItem *_clearButton;
+    UIBarButtonItem *_flex;
+    UIBarButtonItem *_doneButton;
     NSArray<NSString *> *_contents;
 }
 
@@ -42,14 +45,19 @@
         [toolbar sizeToFit];
         _toolbar = toolbar;
         
-        UIBarButtonItem *flex = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemFlexibleSpace target:self action:nil];
-        UIBarButtonItem *rightButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemDone target:self action:@selector(dismissDateOfBirthToolbar:)];
+        _clearButton = [[UIBarButtonItem alloc] initWithTitle:@"Clear" style:UIBarButtonItemStylePlain target:self action:@selector(clear:)];
+        _flex = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemFlexibleSpace target:self action:nil];
+        _doneButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemDone target:self action:@selector(dismissDateOfBirthToolbar:)];
         
-        toolbar.items = @[flex, rightButton];
+        if (_showClearButton) {
+            toolbar.items = @[_clearButton, _flex, _doneButton];
+        } else {
+            toolbar.items = @[_flex, _doneButton];
+        }
+        
         
         textField.inputView = self;
         textField.inputAccessoryView = toolbar;
-        
         
         [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(didStartEditing:) name:UITextFieldTextDidBeginEditingNotification object:textField];
         
@@ -97,7 +105,21 @@
     return _contents;
 }
 
+- (void)setShowClearButton:(BOOL)showClearButton
+{
+    if (_showClearButton != showClearButton) {
+        _showClearButton = showClearButton;
+        if (showClearButton) {
+            _toolbar.items = @[_clearButton, _flex, _doneButton];
+        } else {
+            _toolbar.items = @[_flex, _doneButton];
+        }
+    }
+}
 
+
+
+#pragma mark - UIToolbar Target methods
 
 - (void)dismissDateOfBirthToolbar:(id)sender
 {
@@ -109,20 +131,31 @@
     [self.targetTextField resignFirstResponder];
 }
 
+- (void)clear:(id)sender
+{
+    self.targetTextField.text = nil;
+    [self dismissDateOfBirthToolbar:sender];
+}
+
+
 
 
 - (void)didStartEditing:(NSNotification *)notification
 {
     NSUInteger row = [self selectedRowInComponent:0];
-    self.targetTextField.text = self.contents[row];
+    if (row < self.contents.count) {
+        self.targetTextField.text = self.contents[row];
+    }
 }
 
 
 
 - (void)selectRow:(NSInteger)row animated:(BOOL)animated
 {
-    [self selectRow:row inComponent:0 animated:animated];
-    self.targetTextField.text = self.contents[row];
+    if (row < self.contents.count) {
+        [self selectRow:row inComponent:0 animated:animated];
+        self.targetTextField.text = self.contents[row];
+    }
 }
 
 

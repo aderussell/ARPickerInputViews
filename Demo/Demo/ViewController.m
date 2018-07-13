@@ -17,18 +17,18 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    // Do any additional setup after loading the view, typically from a nib.
-    
     
     // initialise the date picker input view
     self.datePickerInputView = [[ARDatePickerInputView alloc] initAsInputForTextField:self.datePickerTextField];
+    self.datePickerInputView.showClearButton = YES;
     
     self.numberPickerInputView = [[ARNumberPickerInputView alloc] initAsInputForTextField:self.numberPickerTextField];
-    
+    self.numberPickerInputView.showClearButton = YES;
     self.numberPickerInputView.numberOfColumns = 4;
     self.numberPickerInputView.selectedValue = 4390;
     
     self.listPickerInputView = [[ARListPickerInputView alloc] initAsInputForTextField:self.listPickerTextField];
+    self.listPickerInputView.showClearButton = YES;
     self.listPickerInputView.contents = @[ @"Object A", @"Object B", @"Object C" ];
 }
 

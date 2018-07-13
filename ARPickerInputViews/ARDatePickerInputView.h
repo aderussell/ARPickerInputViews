@@ -29,13 +29,9 @@ NS_ASSUME_NONNULL_BEGIN
  */
 @interface ARDatePickerInputView : UIDatePicker
 
-
 - (instancetype)init NS_UNAVAILABLE;
 
 - (instancetype)initWithFrame:(CGRect)frame NS_UNAVAILABLE;
-
-
-
 
 /**
  *  Initializes and returns a new date picker which is set to the inputView of a specified text field.
@@ -45,6 +41,7 @@ NS_ASSUME_NONNULL_BEGIN
  *  @return A newly initialized date picker.
  */
 - (instancetype)initAsInputForTextField:(UITextField *)textField;
+
 
 /**
  *  The text field that is using the date picker as it's input view.
@@ -66,8 +63,11 @@ NS_ASSUME_NONNULL_BEGIN
  */
 - (void)updateDate;
 
-
-
+/**
+ *  Whether, or not, the receiver should show a clear button which will clear the target text field and dismiss the input view.
+ *  The default value is `NO`.
+ */
+@property (nonatomic, getter=showingClearButton) BOOL showClearButton;
 
 
 @property (nonatomic, copy, nullable) void (^valueChangedBlock)(NSDate *date);

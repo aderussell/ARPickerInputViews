@@ -16,7 +16,7 @@ Pod::Spec.new do |s|
   #
 
   s.name         = "ARPickerInputViews"
-  s.version      = "1.0.1"
+  s.version      = "1.0.2"
   s.summary      = "A set of pickers that can easily be used as input views for a UITextField."
   s.description  = <<-DESC
   					A set of pickers that can easily be used as input views for a UITextField allowing text fields to use a list as an input rather than a keyboard.
