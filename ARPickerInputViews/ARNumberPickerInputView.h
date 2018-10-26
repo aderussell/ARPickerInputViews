@@ -36,9 +36,15 @@ NS_ASSUME_NONNULL_BEGIN
 
 - (instancetype)initAsInputForTextField:(UITextField *)textField;
 
-
+/**
+ *  The text field that is using the receiver as it's input view.
+ *  The contents of the text field will change to reflect changes in the receiver.
+ */
 @property (weak, nonatomic, readonly) UITextField *targetTextField;
 
+/**
+ *  An optional block that is called when the selected value is changed.
+ */
 @property (nonatomic, copy, nullable) void (^valueChangedBlock)(NSUInteger value);
 
 /**

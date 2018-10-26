@@ -69,7 +69,9 @@ NS_ASSUME_NONNULL_BEGIN
  */
 @property (nonatomic, getter=showingClearButton) BOOL showClearButton;
 
-
+/**
+ *  An optional block that is called when the selected date is changed.
+ */
 @property (nonatomic, copy, nullable) void (^valueChangedBlock)(NSDate *date);
 
 @end
